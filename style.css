@@ -1,6 +1,12 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
     font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans", Meiryo, sans-serif;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(245, 245, 245);
+    overflow: hidden;
+    height: 100dvh;
 }
 
 header {
@@ -11,8 +17,8 @@ header {
 }
 
 .notification-icon {
-    height: 25px;
-    width: 25px;
+    height: 30px;
+    width: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,9 +26,9 @@ header {
 
 .notification-icon img {
     object-fit: contain;
-    height: 25px;
-    width: 25px;
-    opacity: 0.5;
+    height: 30px;
+    width: 30px;
+    opacity: 0.3;
 }
 
 main {
@@ -31,17 +37,36 @@ main {
 
 .current-task {
     width: 100vw;
-    margin: 0 0 2rem;
+    min-height: 100dvh;
+    margin: 0 0 0;
 }
 
 .sub-title {
-    padding: 0 1.5rem 1.5rem;
+    padding: 0 1.5rem 0rem;
     color: #111
 }
 
+ul.horizontal-list {
+    display: flex;
+	overflow-x: auto;
+	white-space: nowrap;
+    scroll-snap-type: x mandatory;
+    padding-left: calc(50% - 150px);
+    padding-right: calc(50% - 150px);
+    scroll-padding-inline: 50%;
+    gap: 1.2rem;
+    box-sizing: border-box;
+}
+
+li.item {
+	display: inline-block;
+    scroll-snap-align: center;
+    width: 300px;
+}	
+
 .task-card {
     background-color: #ffffff;
-    margin: 0 3rem;
+    margin: 1.5rem 0rem;
     border-radius: 4rem;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
@@ -118,13 +143,13 @@ svg circle.line {
 .task-name {
     font-size: 1rem;
     color: #111;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0rem;
 }
 
 .project-name {
-    font-size: 1rem;
+    font-size: 0.8rem;
     color: #7b7b7b;
-    padding: 0,
+    margin: 0,
 }
 
 .box .percent .number .time {
@@ -146,19 +171,40 @@ svg circle.line {
 
 .task-description {
     text-align: center;
-    padding: 0 1.5rem 2rem;
+    padding: 0 1.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
 }
 
 /* https://b-risk.jp/blog/2022/06/infographics/ */
 
 .projects {
     width: 100%;
-    margin: 0 0 100px;
+    margin: 0 0 80px;
+    padding-top: 0.5rem;
+    min-height: 100dvh;
 }
 
 .projects .sub-title {
-    padding: 0 1.5rem 1rem;
-    color: #111
+    padding: 1rem 1.5rem 1rem 1.5rem;
+    color: #111;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.add-button {
+    height: 30px;
+    width: 30px;
+}
+
+.add-button img {
+    object-fit: contain;
+    height: 30px;
+    width: 30px;
+    opacity: 0.3;
 }
 
 .projects-list {
@@ -195,6 +241,13 @@ svg circle.line {
     display: flex;
     gap: 0.5rem;
     opacity: 0.7;
+}
+
+.card-tags {
+    display: flex;
+    gap: 0.5rem;
+    opacity: 0.7;
+    margin-top: 0.7rem;
 }
 
 .tag {
@@ -256,6 +309,8 @@ footer {
     background: linear-gradient(rgba(255, 255, 255, 0), rgba(100, 100, 100, 0.2));
 }
 
+
+
 .tab-bar {
     background: rgba(255, 255, 255, 1);
     border-radius: 3rem;
@@ -264,7 +319,25 @@ footer {
     align-items: center;
     width: 100%;
     height: auto;
-    padding: 1rem 0.7rem;
+    padding: 0.4rem;
+    gap: 0.2rem;
+}
+
+.tab-button {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.6rem 0.3rem;
+    border-radius: 4rem;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+}
+
+.tab-button.selected {
+    background-color: #ffffff;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 footer img {
@@ -272,6 +345,8 @@ footer img {
     object-fit: contain;
     display: block;
 }
+
+
 
 .progress-checkbox {
     position: absolute;
@@ -321,7 +396,7 @@ footer img {
     height: 5.5rem;
     margin: 0 1rem;
     padding: 0 0.5rem;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-top: 1px dashed rgba(0, 0, 0, 0.1);
 }
 
 .project-right {
@@ -387,3 +462,11 @@ footer img {
     color: #111;
     font-size: 0.6rem;
 }
+
+/* #user {
+    display: none;
+}
+
+#user.visible {
+    display: block;
+} */
