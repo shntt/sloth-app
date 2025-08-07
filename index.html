@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/ress@4.0.0/dist/ress.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+    <link rel="manifest" href="manifest.json">
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service_worker.js').then(function (registration) {
+                console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            }).catch(function (err) {
+                console.log('ServiceWorker registration failed: ', err);
+            });
+        }
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello Vue!'
+            },
+            methods: {
+                reverseMessage: function () {
+                    this.message = this.message.split('').reverse().join('')
+                }
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+        <h2>Hello, Shinto</h2>
+        <div class="notification-icon"><img src="https://img.icons8.com/?size=100&id=11668&format=png&color=000000">
+        </div>
+    </header>
+    <main>
+        <div class="current-task">
+            <h3 class="sub-title">Current Tasks</h3>
+            <div class="task-card">
+                <div class="box">
+                    <div class="percent">
+                        <svg>
+                            <circle class="base" cx="150" cy="150" r="100"></circle>
+                            <circle class="line" cx="150" cy="150" r="100"></circle>
+                        </svg>
+                        <div class="number">
+                            <h3 class="time">1<span>:</span>12<span>:</span>36<span>:</span>10</h3>
+                        </div>
+                        <div class="progress-checkbox">
+                            <input type="checkbox">
+                            <img src="https://img.icons8.com/?size=100&id=7690&format=png&color=000000">
+                        </div>
+                    </div>
+                </div>
+                <div class="task-description">
+                    <h3 class="task-name">第3章 読み終える</h3>
+                    <p class="project-name">Node.js Book 3/10</p>
+                </div>
+            </div>
+        </div>
+        <div class="projects">
+            <h3 class="sub-title">Projects</h3>
+            <div class="projects-list">
+                <div class="project">
+                    <div class="project-left">
+                        <h4>Node.js Book</h4>
+                        <!-- プロジェクト用のさらに大きいカテゴリを作る？　PersonalとかWorkとか -->
+                        <div class="tags">
+                            <div class="tag">
+                                <img src="https://img.icons8.com/?size=100&id=11691&format=png&color=000000">
+                                <p>Primary</p>
+                            </div>
+                            <div class="tag next-deadline">
+                                <img src="https://img.icons8.com/?size=100&id=42287&format=png&color=000000">
+                                <p>Aug 6., Wed</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-right">
+                        <div class="progress">
+                            <svg>
+                                <circle class="base" cx="25" cy="25" r="20"></circle>
+                                <circle class="line" cx="25" cy="25" r="20"></circle>
+                            </svg>
+                            <div class="number">
+                                <h3 class="time">2/4</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project-left">
+                        <h4>TypeScript Book</h4>
+                        <div class="tags">
+                            <div class="tag next-deadline">
+                                <img src="https://img.icons8.com/?size=100&id=42287&format=png&color=000000">
+                                <p>12 hours left</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-right">
+                        <div class="progress">
+                            <svg>
+                                <circle class="base" cx="25" cy="25" r="20"></circle>
+                                <circle class="line thirty" cx="25" cy="25" r="20"></circle>
+                            </svg>
+                            <div class="number">
+                                <h3 class="time">2/6</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project-left">
+                        <h4>Build Web App</h4>
+                        <div class="tags">
+                            <div class="tag next-deadline">
+                                <img src="https://img.icons8.com/?size=100&id=42287&format=png&color=000000">
+                                <p>Aug 20., Wed</p>
+                            </div>
+                            <div class="tag shared">
+                                <img src="https://img.icons8.com/?size=100&id=22143&format=png&color=000000">
+                                <p>Shared</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-right">
+                        <div class="progress">
+                            <svg>
+                                <circle class="base" cx="25" cy="25" r="20"></circle>
+                                <circle class="line ten" cx="25" cy="25" r="20"></circle>
+                            </svg>
+                            <div class="number">
+                                <h3 class="time">1/10</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project-left">
+                        <h4>Clean My Room</h4>
+                        <div class="tags">
+                            <div class="tag paused">
+                                <img src="https://img.icons8.com/?size=100&id=42287&format=png&color=000000">
+                                <p>Paused</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-right">
+                        <div class="progress">
+                            <svg>
+                                <circle class="base" cx="25" cy="25" r="20"></circle>
+                                <circle class="line zero" cx="25" cy="25" r="20"></circle>
+                            </svg>
+                            <div class="number">
+                                <h3 class="time">0/1</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </main>
+    <footer>
+        <div class="tab-bar">
+            <img src="https://img.icons8.com/?size=100&id=73&format=png&color=000000">
+            <img src="https://img.icons8.com/?size=100&id=25591&format=png&color=000000">
+            <img src="https://img.icons8.com/?size=100&id=42287&format=png&color=000000">
+            <img src="https://img.icons8.com/?size=100&id=7820&format=png&color=000000">
+        </div>
+    </footer>
+</body>
+
+</html>
