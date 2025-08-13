@@ -1,0 +1,65 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans", Meiryo, sans-serif;
+    background-color: rgb(245, 245, 245);
+    overflow: hidden;
+    height: 100dvh;
+    text-align: center;
+}
+
+header {
+    text-align: center;
+    margin: 2.5rem 0 0rem;
+    color:rgb(114, 150, 135);
+}
+
+
+form {
+    width: 100vw;
+    padding: 3rem 2rem;
+}
+
+input {
+    background-color: #ffffff;
+    margin: 0.5rem 0rem 1rem;
+    border-radius: 1.5rem;
+    padding: 1rem;
+    font-size: 1rem;
+    width: 100%;
+}
+
+p {
+    font-size: 0.9rem;
+}
+
+#forgot-password {
+    text-align: end;
+    margin-bottom: 1.5rem;
+}
+
+#sign-up {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 4rem;
+    color: rgb(66, 66, 66)
+}
+
+.button {
+    background-color: rgb(154, 186, 173);
+    border-radius: 1.5rem;
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+}
+
+.link {
+    text-decoration: none;
+    color:rgb(114, 150, 135);
+}

@@ -33,7 +33,7 @@ header {
 
 .current-task {
     width: 100vw;
-    margin: 0 0 0;
+    margin: 0;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     padding-bottom: 100px;
@@ -46,80 +46,25 @@ header {
     font-size: 1.2rem;
 }
 
-ul.horizontal-list {
-    display: flex;
-    overflow-x: auto;
-    white-space: nowrap;
-    scroll-snap-type: x mandatory;
-    padding-left: calc(50% - 150px);
-    padding-right: calc(50% - 150px);
-    scroll-padding-inline: 50%;
-    gap: 1.2rem;
-    box-sizing: border-box;
+#upcoming {
+    padding-bottom: 1rem;
 }
 
-li.item {
-    display: inline-block;
-    scroll-snap-align: center;
-    width: 300px;
+ul.horizontal-list {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
 }
 
 .task-card {
     background-color: #ffffff;
-    margin: 1.2rem 0rem 2rem;
+    margin: 1.2rem 2rem 1rem;
     border-radius: 4rem;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-}
-
-.streak {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.streak-box {
-    background-color: rgb(245, 245, 245);
-    margin: 1rem 1.5rem 1.5rem;
-    /* padding: 1rem; */
-    border: 1.5px dashed rgba(192, 192, 192, 0.5);
-    border-radius: 1rem;
-    /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
-    height: 6rem;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.streak-dots {
-    display: grid;
-    grid-template-rows: repeat(7, 1fr);
-    grid-template-columns: repeat(53, 1fr);
-    grid-auto-flow: column;
-    grid-gap: 6px 1px;
-    width: 100%;
-    height: auto;
-    max-width: 100%;
-    padding: 0.5rem 1.2rem;
-    box-sizing: border-box;
-    opacity: 1;
-    /* height: 3.1rem;
-    width: 18.6rem; */
-}
-
-.streak-dots .day {
-    width: 4px;
-    height: 4px;
-    background-color: #e7e7e7;
-    border-radius: 2px;
-}
-
-.streak-dots .day.level-1 {
-    background-color: #afafaf;
-}
-
-.streak-dots .day.level-2 {
-    background-color: rgb(109, 206, 169);
 }
 
 .box .percent {
@@ -226,15 +171,24 @@ svg circle.line {
 .projects {
     width: 100%;
     margin: 0 0 80px;
-    padding-top: 0.5rem;
+    padding-top: 0rem;
     padding-bottom: 100px;
     height: 100dvh;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 }
 
+.projects .project-title {
+    padding: 3.5rem 1.5rem 0rem;
+    color: #111;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.5rem;
+}
+
 .projects .sub-title {
-    padding: 1rem 1.5rem 1rem 1.5rem;
+    padding: 1rem 1.5rem 0rem 1.5rem;
     color: #111;
     display: flex;
     align-items: center;
@@ -243,7 +197,10 @@ svg circle.line {
 
 .add-button {
     height: 30px;
-    width: 30px;
+    width: auto;
+    display: flex;
+    gap: 0.8rem;
+    margin: 0rem;
 }
 
 .add-button img {
@@ -266,7 +223,8 @@ svg circle.line {
 }
 
 .project-left h4 {
-    font-weight: 410;
+    font-weight: 400;
+    font-size: 0.9rem;
     color: #000;
 }
 
@@ -282,6 +240,13 @@ svg circle.line {
     object-fit: contain;
     height: 30px;
     width: 30px;
+}
+
+.p-tags {
+    display: flex;
+    gap: 0.5rem;
+    opacity: 0.7;
+    margin: 0.6rem 1.2rem 1rem;
 }
 
 .tags {
@@ -315,6 +280,11 @@ svg circle.line {
     color: rgb(255, 0, 0);
 }
 
+.tag.next-deadline.done {
+    background-color: rgba(99, 99, 99, 0.1);
+    color: rgb(0, 0, 0);
+}
+
 .tag.shared {
     background-color: rgba(52, 133, 255, 0.1);
     color: rgb(52, 133, 255);
@@ -334,6 +304,10 @@ svg circle.line {
 
 .tag.tag.next-deadline img {
     filter: brightness(0) saturate(100%) invert(18%) sepia(73%) saturate(7055%) hue-rotate(357deg) brightness(105%) contrast(117%);
+}
+
+.tag.tag.next-deadline.done img {
+    filter: none;
 }
 
 .tag.tag.shared img {
@@ -404,7 +378,6 @@ footer img {
     border-radius: 20px;
     border: 1.5px solid rgba(192, 192, 192, 1);
     background-color: #f8f8f8;
-    ;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -437,17 +410,17 @@ footer img {
 
 
 
+
 .project {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
-    height: 5.5rem;
-    margin: 0 1rem;
-    padding: 0 0.5rem;
+    height: fit-content;
+    margin: 0 1.5rem;
+    padding: 1rem 0;
     border-top: 1px dashed rgba(0, 0, 0, 0.1);
     text-decoration: none;
-    /* -webkit-tap-highlight-color: transparent;
-    user-select: none; */
+    gap: 0.8rem;
 }
 
 .project-right {
@@ -479,7 +452,7 @@ footer img {
 
 .progress svg circle.line {
     stroke-dashoffset: calc(126 - (126 * 50) / 100);
-    stroke: #89e7aa;
+    stroke: #6e6e6e;
 }
 
 .progress svg circle.thirty {
@@ -514,39 +487,83 @@ footer img {
     font-size: 0.6rem;
 }
 
-/* #user {
-    display: none;
+.project-summary {
+    width: 100%;
+    /* border-top: 1px dashed rgba(0, 0, 0, 0.2); */
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
+    padding: 0.5rem 0;
+    margin-bottom: 0.5rem;
 }
 
-#user.visible {
-    display: block;
-} */
+.project-descriptions {
+    margin: 0 1.5rem 1rem;
+    line-height: 1.5rem;
+}
 
-#user h4 {
-    color: #8d8d8d;
+.project-descriptions .container {
+    display: flex;
+    gap: 0.5rem;
+    line-height: 2rem;
+}
+
+.project-descriptions h5 {
+    font-weight: 400;
+}
+
+.property {
+    color: #969696;
+    font-weight: 500;
+}
+
+.share-id {
+    border-top: 1px dashed rgba(0, 0, 0, 0.2);
+    padding-top: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.desc {
+    flex-direction: column;
+    line-height: 1.5rem;
+}
+
+.desc .property {
+    margin-bottom: 0.5rem;
+}
+
+.desc .property {}
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: auto;
+    padding: 0.5rem 1.2rem 0.5rem;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: #000;
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    background-color: rgb(245, 245, 245);
+}
+
+.nav-bar-left h3 {
+    font-weight: 400;
     font-size: 1rem;
 }
 
-#user .project-left {
-    gap: 0.3rem;
+.nav-bar-left img {
+    height: 100%;
+    width: auto;
 }
 
-#signout {
-    margin: 0 auto;
-    padding: 0.5rem 1rem;
+.nav-bar-left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 1.4rem;
+    gap: 0.5rem;
+    opacity: 0.6;
     text-decoration: none;
-}
-
-#logout-button {
-    background-color: rgb(162, 162, 162);
-    /* border: 1px solid rgba(0, 0, 0, 0.3); */
-    border-radius: 1.5rem;
-    width: fit-content;
-    padding: 0.7rem 1rem;
-    font-size: 1rem;
-    gap: 0.2rem;
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    margin: 1.5rem auto 0;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    color: #000;
 }

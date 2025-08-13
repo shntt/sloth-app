@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/ress@4.0.0/dist/ress.min.css">
+    <link rel="stylesheet" href="./project.css">
+    <meta name="theme-color" content="rgb(245, 245, 245)">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <title>Sloth</title>
+    <link rel="manifest" href="manifest.json">
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service_worker.js').then(function (registration) {
+                console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            }).catch(function (err) {
+                console.log('ServiceWorker registration failed: ', err);
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <div class="projects" id="projects">
+        <div class="nav-bar">
+            <a href="./index.html#projects" class="nav-bar-left">
+                <img src="./images/arrow-left.png">
+                <h3>Projects</h3>
+            </a>
+            <div class="add-button">
+                <img src="https://img.icons8.com/?size=100&id=1E2f1TJaA4zU&format=png&color=000000">
+                <img src="https://img.icons8.com/?size=100&id=11255&format=png&color=000000">
+            </div>
+        </div>
+        <div class="project-title">
+            <h3>TypeScript Book</h3>
+        </div>
+        <div class="p-tags">
+            <div class="tag">
+                <img src="https://img.icons8.com/?size=100&id=11691&format=png&color=000000">
+                <p>Primary</p>
+            </div>
+            <div class="tag paused">
+                <img src="https://img.icons8.com/?size=100&id=42287&format=png&color=000000">
+                <p>Paused</p>
+            </div>
+            <div class="tag shared">
+                <img src="https://img.icons8.com/?size=100&id=22143&format=png&color=000000">
+                <p>Shared</p>
+            </div>
+        </div>
+        <div class="project-descriptions">
+            <div class="project-summary">
+                <div class="container">
+                    <h5 class="property">Goal:</h5>
+                    <h5>エンジニアとして良い経験ができる企業への就職</h5>
+                </div>
+                <div class="container">
+                    <h5 class="property">Sub:</h5>
+                    <h5>学習成果のアウトプット。ポートフォリオの拡充</h5>
+                </div>
+                <!-- 編集画面でメッセージも編集 -->
+                <div class="container share-id">
+                    <h5 class="property">Shared with:</h5>
+                    <h5>highbridge228</h5>
+                </div>
+            </div>
+            <div class="desc">
+                <h5 class="property">Description</h5>
+                <h5>ここには、オプションでプロジェクトの説明を書きます。なんでそれをやる必要があるか、モチベーションは何か、などプロジェクトの達成に役立つことをなんでも書きましょう</h5>
+            </div>
+        </div>
+        <h3 class="sub-title">Current Task</h3>
+        <div class="task-card item">
+            <div class="box">
+                <div class="percent">
+                    <svg>
+                        <circle class="base" cx="150" cy="150" r="100"></circle>
+                        <circle class="line" cx="150" cy="150" r="100"></circle>
+                    </svg>
+                    <div class="number">
+                        <h3 class="time">1<span>:</span>12<span>:</span>36<span>:</span>10</h3>
+                    </div>
+                    <div class="progress-checkbox">
+                        <input type="checkbox">
+                        <img src="https://img.icons8.com/?size=100&id=7690&format=png&color=000000">
+                    </div>
+                </div>
+            </div>
+            <div class="task-description">
+                <h3 class="task-name">第5章 TypeScriptのクラス</h3>
+                <div class="card-tags">
+                    <div class="tag next-deadline">
+                        <img src="https://img.icons8.com/?size=100&id=42287&format=png&color=000000">
+                        <p>Aug 8, 9:00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h3 class="sub-title" id="upcoming">Upcoming</h3>
+        <div class="projects-list">
+            <div class="project">
+                <div class="project-right">
+                    <div class="add-button">
+                        <img src="https://img.icons8.com/?size=100&id=37375&format=png&color=000000">
+                    </div>
+                </div>
+                <div class="project-left">
+                    <h4>6章 高度な型</h4>
+                    <div class="tags">
+                        <div class="tag next-deadline">
+                            <img src="https://img.icons8.com/?size=100&id=42287&format=png&color=000000">
+                            <p>Aug 10, 20:00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="project">
+                <div class="project-right">
+                    <div class="add-button">
+                        <img src="https://img.icons8.com/?size=100&id=37375&format=png&color=000000">
+                    </div>
+                </div>
+                <div class="project-left">
+                    <h4>7章 TypeScriptのモジュールシステム</h4>
+                    <div class="tags">
+                        <div class="tag next-deadline">
+                            <img src="https://img.icons8.com/?size=100&id=42287&format=png&color=000000">
+                            <p>Aug 14, 10:00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="project">
+                <div class="project-right">
+                    <div class="add-button">
+                        <img src="https://img.icons8.com/?size=100&id=37375&format=png&color=000000">
+                    </div>
+                </div>
+                <div class="project-left">
+                    <h4>飛ばしてたコラムを読む</h4>
+                    <div class="tags">
+                        <div class="tag next-deadline">
+                            <img src="https://img.icons8.com/?size=100&id=42287&format=png&color=000000">
+                            <p>Aug 16, 12:00</p>
+                        </div>
+                        <div class="tag next-deadline done">
+                            <img src="https://img.icons8.com/?size=100&id=11642&format=png&color=000000">
+                            <p>Muted</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="project">
+                <div class="project-right">
+                    <div class="add-button">
+                        <img src="https://img.icons8.com/?size=100&id=37375&format=png&color=000000">
+                    </div>
+                </div>
+                <div class="project-left">
+                    <h4>８章 非同期処理</h4>
+                    <div class="tags">
+                        <div class="tag next-deadline">
+                            <img src="https://img.icons8.com/?size=100&id=42287&format=png&color=000000">
+                            <p>Aug 20, 12:00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h3 class="sub-title" id="upcoming">Done</h3>
+            <!-- ここに折りたたみボタンや、残りタスク割合を書く -->
+            <div class="projects-list">
+                <div class="project">
+                    <div class="project-right">
+                        <div class="add-button">
+                            <img src="https://img.icons8.com/?size=100&id=11695&format=png&color=000000">
+                        </div>
+                    </div>
+                    <div class="project-left">
+                        <h4>1章 イントロダクションを読む</h4>
+                        <div class="tags">
+                            <div class="tag next-deadline done">
+                                <img src="https://img.icons8.com/?size=100&id=42287&format=png&color=000000">
+                                <p>Aug 6, 12:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project-right">
+                        <div class="add-button">
+                            <img src="https://img.icons8.com/?size=100&id=11695&format=png&color=000000">
+                        </div>
+                    </div>
+                    <div class="project-left">
+                        <h4>2章 基本的な文法を読む</h4>
+                        <div class="tags">
+                            <div class="tag next-deadline done">
+                                <img src="https://img.icons8.com/?size=100&id=42287&format=png&color=000000">
+                                <p>Aug 6, 12:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project-right">
+                        <div class="add-button">
+                            <img src="https://img.icons8.com/?size=100&id=11695&format=png&color=000000">
+                        </div>
+                    </div>
+                    <div class="project-left">
+                        <h4>3章 オブジェクトの基本とオブジェクトの型</h4>
+                        <div class="tags">
+                            <div class="tag next-deadline done">
+                                <img src="https://img.icons8.com/?size=100&id=42287&format=png&color=000000">
+                                <p>Aug 6, 12:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project-right">
+                        <div class="add-button">
+                            <img src="https://img.icons8.com/?size=100&id=11695&format=png&color=000000">
+                        </div>
+                    </div>
+                    <div class="project-left">
+                        <h4>4章 TypeScriptの関数</h4>
+                        <div class="tags">
+                            <div class="tag next-deadline done">
+                                <img src="https://img.icons8.com/?size=100&id=42287&format=png&color=000000">
+                                <p>Aug 6, 12:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>

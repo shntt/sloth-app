@@ -9,7 +9,7 @@
     <meta name="theme-color" content="rgb(245, 245, 245)">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <title>Sloth</title>
+    <title>eucaly</title>
     <link rel="manifest" href="manifest.json">
     <script>
         if ('serviceWorker' in navigator) {
@@ -29,331 +29,280 @@
                 });
             });
         });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const streakDots = document.querySelector('.streak-dots');
+            const totalDays = 365;
+            const today = new Date();
+            const startDate = new Date(today.getFullYear() - 1, today.getMonth(), today.getDate() + 1);
+
+            for (let i = 0; i < totalDays; i++) {
+                const day = document.createElement('div');
+                day.classList.add('day');
+
+                // 仮のコミットデータ
+                const commitLevel = Math.floor(Math.random() * 3);
+                if (commitLevel > 0) {
+                    day.classList.add(`level-${commitLevel}`);
+                }
+
+                streakDots.appendChild(day);
+            }
+        });
     </script>
 </head>
 
 <body>
-    <main>
-        <div class="current-task">
-            <header id="top">
-                <h2>Hello, Shinto</h2>
-                <div class="notification-icon">
-                    <!-- <img src="https://img.icons8.com/?size=100&id=11668&format=png&color=000000"> -->
-                    <img src="https://img.icons8.com/?size=100&id=11255&format=png&color=000000">
-                </div>
-            </header>
-            <h3 class="sub-title">3 Current Tasks</h3>
-            <ul class="horizontal-list">
-                <li class="task-card item">
-                    <div class="box">
-                        <div class="percent">
-                            <svg>
-                                <circle class="base" cx="150" cy="150" r="100"></circle>
-                                <circle class="line" cx="150" cy="150" r="100"></circle>
-                            </svg>
-                            <div class="number">
-                                <h3 class="time">1<span>:</span>12<span>:</span>36<span>:</span>10</h3>
-                            </div>
-                            <div class="progress-checkbox">
-                                <input type="checkbox">
-                                <img src="https://img.icons8.com/?size=100&id=7690&format=png&color=000000">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="task-description">
-                        <h3 class="task-name">第3章 読み終える</h3>
-                        <p class="project-name">Node.js Book 3/10</p>
-                        <div class="card-tags">
-                            <div class="tag next-deadline">
-                                <img src="https://img.icons8.com/?size=100&id=42287&format=png&color=000000">
-                                <p>Aug 20, 9:00</p>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="task-card item">
-                    <div class="box">
-                        <div class="percent">
-                            <svg>
-                                <circle class="base" cx="150" cy="150" r="100"></circle>
-                                <circle class="line" cx="150" cy="150" r="100"></circle>
-                            </svg>
-                            <div class="number">
-                                <h3 class="time">1<span>:</span>12<span>:</span>36<span>:</span>10</h3>
-                            </div>
-                            <div class="progress-checkbox">
-                                <input type="checkbox">
-                                <img src="https://img.icons8.com/?size=100&id=7690&format=png&color=000000">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="task-description">
-                        <h3 class="task-name">第3章 読み終える</h3>
-                        <p class="project-name">Node.js Book 3/10</p>
-                        <div class="card-tags">
-                            <div class="tag next-deadline">
-                                <img src="https://img.icons8.com/?size=100&id=42287&format=png&color=000000">
-                                <p>Aug 20, 9:00</p>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="task-card item">
-                    <div class="box">
-                        <div class="percent">
-                            <svg>
-                                <circle class="base" cx="150" cy="150" r="100"></circle>
-                                <circle class="line" cx="150" cy="150" r="100"></circle>
-                            </svg>
-                            <div class="number">
-                                <h3 class="time">1<span>:</span>12<span>:</span>36<span>:</span>10</h3>
-                            </div>
-                            <div class="progress-checkbox">
-                                <input type="checkbox">
-                                <img src="https://img.icons8.com/?size=100&id=7690&format=png&color=000000">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="task-description">
-                        <h3 class="task-name">第3章 読み終える</h3>
-                        <p class="project-name">Node.js Book 3/10</p>
-                        <div class="card-tags">
-                            <div class="tag next-deadline">
-                                <img src="https://img.icons8.com/?size=100&id=42287&format=png&color=000000">
-                                <p>Aug 20, 9:00</p>
-                            </div>
-                            <div class="tag shared">
-                                <img src="https://img.icons8.com/?size=100&id=22143&format=png&color=000000">
-                                <p>Shared</p>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <div class="projects" id="projects">
-            <div class="sub-title">
-                <h3>4 Projects</h3>
-                <div class="add-button">
-                    <img src="https://img.icons8.com/?size=100&id=11255&format=png&color=000000">
-                </div>
+    <div class="current-task">
+        <header id="top">
+            <h2>Hello, Shinto</h2>
+            <div class="notification-icon">
+                <!-- <img src="https://img.icons8.com/?size=100&id=11668&format=png&color=000000"> -->
+                <img src="https://img.icons8.com/?size=100&id=11255&format=png&color=000000">
             </div>
-            <div class="projects-list">
-                <div class="project">
-                    <div class="project-left">
-                        <h4>Node.js Book</h4>
-                        <!-- プロジェクト用のさらに大きいカテゴリを作る？　PersonalとかWorkとか -->
-                        <div class="tags">
-                            <div class="tag">
-                                <img src="https://img.icons8.com/?size=100&id=11691&format=png&color=000000">
-                                <p>Primary</p>
-                            </div>
-                            <div class="tag next-deadline">
-                                <img src="https://img.icons8.com/?size=100&id=42287&format=png&color=000000">
-                                <p>Aug 6, 12:00</p>
-                            </div>
+        </header>
+        <h3 class="sub-title">Current Tasks</h3>
+        <ul class="horizontal-list">
+            <li class="task-card item">
+                <div class="box">
+                    <div class="percent">
+                        <svg>
+                            <circle class="base" cx="150" cy="150" r="100"></circle>
+                            <circle class="line" cx="150" cy="150" r="100"></circle>
+                        </svg>
+                        <div class="number">
+                            <h3 class="time">1<span>:</span>12<span>:</span>36<span>:</span>10</h3>
                         </div>
-                    </div>
-
-                    <div class="project-right">
-                        <div class="progress">
-                            <svg>
-                                <circle class="base" cx="25" cy="25" r="20"></circle>
-                                <circle class="line" cx="25" cy="25" r="20"></circle>
-                            </svg>
-                            <div class="number">
-                                <h3 class="time">2/4</h3>
-                            </div>
+                        <div class="progress-checkbox">
+                            <input type="checkbox">
+                            <img src="https://img.icons8.com/?size=100&id=7690&format=png&color=000000">
                         </div>
                     </div>
                 </div>
-                <div class="project">
-                    <div class="project-left">
-                        <h4>TypeScript Book</h4>
-                        <div class="tags">
-                            <div class="tag next-deadline">
-                                <img src="https://img.icons8.com/?size=100&id=42287&format=png&color=000000">
-                                <p>Aug 7, 14:30</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-right">
-                        <div class="progress">
-                            <svg>
-                                <circle class="base" cx="25" cy="25" r="20"></circle>
-                                <circle class="line thirty" cx="25" cy="25" r="20"></circle>
-                            </svg>
-                            <div class="number">
-                                <h3 class="time">2/6</h3>
-                            </div>
+                <div class="task-description">
+                    <h3 class="task-name">第3章 読み終える</h3>
+                    <p class="project-name">Node.js Book 3/10</p>
+                    <div class="card-tags">
+                        <div class="tag next-deadline">
+                            <img src="https://img.icons8.com/?size=100&id=42287&format=png&color=000000">
+                            <p>Aug 20, 9:00</p>
                         </div>
                     </div>
                 </div>
-                <div class="project">
-                    <div class="project-left">
-                        <h4>Build Web App</h4>
-                        <div class="tags">
-                            <div class="tag next-deadline">
-                                <img src="https://img.icons8.com/?size=100&id=42287&format=png&color=000000">
-                                <p>Aug 20, 9:00</p>
-                            </div>
-                            <div class="tag shared">
-                                <img src="https://img.icons8.com/?size=100&id=22143&format=png&color=000000">
-                                <p>Shared</p>
-                            </div>
+            </li>
+            <li class="task-card item">
+                <div class="box">
+                    <div class="percent">
+                        <svg>
+                            <circle class="base" cx="150" cy="150" r="100"></circle>
+                            <circle class="line" cx="150" cy="150" r="100"></circle>
+                        </svg>
+                        <div class="number">
+                            <h3 class="time">1<span>:</span>12<span>:</span>36<span>:</span>10</h3>
                         </div>
-                    </div>
-
-                    <div class="project-right">
-                        <div class="progress">
-                            <svg>
-                                <circle class="base" cx="25" cy="25" r="20"></circle>
-                                <circle class="line ten" cx="25" cy="25" r="20"></circle>
-                            </svg>
-                            <div class="number">
-                                <h3 class="time">1/10</h3>
-                            </div>
+                        <div class="progress-checkbox">
+                            <input type="checkbox">
+                            <img src="https://img.icons8.com/?size=100&id=7690&format=png&color=000000">
                         </div>
                     </div>
                 </div>
-                <div class="project">
-                    <div class="project-left">
-                        <h4>Clean My Room</h4>
-                        <div class="tags">
-                            <div class="tag paused">
-                                <img src="https://img.icons8.com/?size=100&id=42287&format=png&color=000000">
-                                <p>Paused</p>
-                            </div>
+                <div class="task-description">
+                    <h3 class="task-name">第3章 読み終える</h3>
+                    <p class="project-name">Node.js Book 3/10</p>
+                    <div class="card-tags">
+                        <div class="tag next-deadline">
+                            <img src="https://img.icons8.com/?size=100&id=42287&format=png&color=000000">
+                            <p>Aug 20, 9:00</p>
                         </div>
                     </div>
-
-                    <div class="project-right">
-                        <div class="progress">
-                            <svg>
-                                <circle class="base" cx="25" cy="25" r="20"></circle>
-                                <circle class="line zero" cx="25" cy="25" r="20"></circle>
-                            </svg>
-                            <div class="number">
-                                <h3 class="time">0/1</h3>
-                            </div>
+                </div>
+            </li>
+            <li class="task-card item">
+                <div class="box">
+                    <div class="percent">
+                        <svg>
+                            <circle class="base" cx="150" cy="150" r="100"></circle>
+                            <circle class="line" cx="150" cy="150" r="100"></circle>
+                        </svg>
+                        <div class="number">
+                            <h3 class="time">1<span>:</span>12<span>:</span>36<span>:</span>10</h3>
+                        </div>
+                        <div class="progress-checkbox">
+                            <input type="checkbox">
+                            <img src="https://img.icons8.com/?size=100&id=7690&format=png&color=000000">
                         </div>
                     </div>
+                </div>
+                <div class="task-description">
+                    <h3 class="task-name">第3章 読み終える</h3>
+                    <p class="project-name">Node.js Book 3/10</p>
+                    <div class="card-tags">
+                        <div class="tag next-deadline">
+                            <img src="https://img.icons8.com/?size=100&id=42287&format=png&color=000000">
+                            <p>Aug 20, 9:00</p>
+                        </div>
+                        <div class="tag shared">
+                            <img src="https://img.icons8.com/?size=100&id=22143&format=png&color=000000">
+                            <p>Shared</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <h3 class="sub-title">Commits</h3>
+        <div class="streak">
+            <div class="box streak-box">
+                <div class="streak-dots">
                 </div>
             </div>
         </div>
-        <div class="projects" id="user">
-            <div class="sub-title">
-                <h3>User</h3>
-                <!-- <div class="add-button">
+    </div>
+    <div class="projects" id="projects">
+        <div class="sub-title">
+            <h3>Projects</h3>
+            <div class="add-button">
+                <img src="https://img.icons8.com/?size=100&id=WqTy3Dl1VP5c&format=png&color=000000">
+            </div>
+        </div>
+        <div class="projects-list">
+            <a href="project.html" class="project">
+                <div class="project-left">
+                    <h4>Node.js Book</h4>
+                    <!-- プロジェクト用のさらに大きいカテゴリを作る？　PersonalとかWorkとか -->
+                    <div class="tags">
+                        <div class="tag">
+                            <img src="https://img.icons8.com/?size=100&id=11691&format=png&color=000000">
+                            <p>Primary</p>
+                        </div>
+                        <div class="tag next-deadline">
+                            <img src="https://img.icons8.com/?size=100&id=42287&format=png&color=000000">
+                            <p>Aug 6, 12:00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-right">
+                    <div class="progress">
+                        <svg>
+                            <circle class="base" cx="25" cy="25" r="20"></circle>
+                            <circle class="line" cx="25" cy="25" r="20"></circle>
+                        </svg>
+                        <div class="number">
+                            <h3 class="time">2/4</h3>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="project.html" class="project">
+                <div class="project-left">
+                    <h4>TypeScript Book</h4>
+                    <div class="tags">
+                        <div class="tag next-deadline">
+                            <img src="https://img.icons8.com/?size=100&id=42287&format=png&color=000000">
+                            <p>Aug 7, 14:30</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-right">
+                    <div class="progress">
+                        <svg>
+                            <circle class="base" cx="25" cy="25" r="20"></circle>
+                            <circle class="line thirty" cx="25" cy="25" r="20"></circle>
+                        </svg>
+                        <div class="number">
+                            <h3 class="time">2/6</h3>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="project.html" class="project">
+                <div class="project-left">
+                    <h4>Build Web App</h4>
+                    <div class="tags">
+                        <div class="tag next-deadline">
+                            <img src="https://img.icons8.com/?size=100&id=42287&format=png&color=000000">
+                            <p>Aug 20, 9:00</p>
+                        </div>
+                        <div class="tag shared">
+                            <img src="https://img.icons8.com/?size=100&id=22143&format=png&color=000000">
+                            <p>Shared</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-right">
+                    <div class="progress">
+                        <svg>
+                            <circle class="base" cx="25" cy="25" r="20"></circle>
+                            <circle class="line ten" cx="25" cy="25" r="20"></circle>
+                        </svg>
+                        <div class="number">
+                            <h3 class="time">1/10</h3>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="project.html" class="project">
+                <div class="project-left">
+                    <h4>Clean My Room</h4>
+                    <div class="tags">
+                        <div class="tag paused">
+                            <img src="https://img.icons8.com/?size=100&id=42287&format=png&color=000000">
+                            <p>Paused</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-right">
+                    <div class="progress">
+                        <svg>
+                            <circle class="base" cx="25" cy="25" r="20"></circle>
+                            <circle class="line zero" cx="25" cy="25" r="20"></circle>
+                        </svg>
+                        <div class="number">
+                            <h3 class="time">0/1</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+    <div class="projects" id="user">
+        <div class="sub-title">
+            <h3>User</h3>
+            <div class="add-button">
+                <img src="https://img.icons8.com/?size=100&id=1E2f1TJaA4zU&format=png&color=000000">
+            </div>
+            <!-- <div class="add-button">
                     <img src="https://img.icons8.com/?size=100&id=1501&format=png&color=000000">
                 </div> -->
-            </div>
-            <div class="projects-list">
-                <div class="project">
-                    <div class="project-left">
-                        <h4>Node.js Book</h4>
-                        <!-- プロジェクト用のさらに大きいカテゴリを作る？　PersonalとかWorkとか -->
-                        <div class="tags">
-                            <div class="tag">
-                                <img src="https://img.icons8.com/?size=100&id=11691&format=png&color=000000">
-                                <p>Primary</p>
-                            </div>
-                            <div class="tag next-deadline">
-                                <img src="https://img.icons8.com/?size=100&id=42287&format=png&color=000000">
-                                <p>Aug 6, 12:00</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-right">
-                        <div class="progress">
-                            <svg>
-                                <circle class="base" cx="25" cy="25" r="20"></circle>
-                                <circle class="line" cx="25" cy="25" r="20"></circle>
-                            </svg>
-                            <div class="number">
-                                <h3 class="time">2/4</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="project">
-                    <div class="project-left">
-                        <h4>TypeScript Book</h4>
-                        <div class="tags">
-                            <div class="tag next-deadline">
-                                <img src="https://img.icons8.com/?size=100&id=42287&format=png&color=000000">
-                                <p>Aug 7, 14:30</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-right">
-                        <div class="progress">
-                            <svg>
-                                <circle class="base" cx="25" cy="25" r="20"></circle>
-                                <circle class="line thirty" cx="25" cy="25" r="20"></circle>
-                            </svg>
-                            <div class="number">
-                                <h3 class="time">2/6</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="project">
-                    <div class="project-left">
-                        <h4>Build Web App</h4>
-                        <div class="tags">
-                            <div class="tag next-deadline">
-                                <img src="https://img.icons8.com/?size=100&id=42287&format=png&color=000000">
-                                <p>Aug 20, 9:00</p>
-                            </div>
-                            <div class="tag shared">
-                                <img src="https://img.icons8.com/?size=100&id=22143&format=png&color=000000">
-                                <p>Shared</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-right">
-                        <div class="progress">
-                            <svg>
-                                <circle class="base" cx="25" cy="25" r="20"></circle>
-                                <circle class="line ten" cx="25" cy="25" r="20"></circle>
-                            </svg>
-                            <div class="number">
-                                <h3 class="time">1/10</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="project">
-                    <div class="project-left">
-                        <h4>Clean My Room</h4>
-                        <div class="tags">
-                            <div class="tag paused">
-                                <img src="https://img.icons8.com/?size=100&id=42287&format=png&color=000000">
-                                <p>Paused</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-right">
-                        <div class="progress">
-                            <svg>
-                                <circle class="base" cx="25" cy="25" r="20"></circle>
-                                <circle class="line zero" cx="25" cy="25" r="20"></circle>
-                            </svg>
-                            <div class="number">
-                                <h3 class="time">0/1</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
-    </main>
+        <div class="projects-list">
+            <div class="project">
+                <div class="project-left">
+                    <h4>Name</h4>
+                    <h3>Shinto</h3>
+                </div>
+            </div>
+            <div class="project">
+                <div class="project-left">
+                    <h4>Discord ID</h4>
+                    <h3>a1q2sw3de4fr5gt6hy7</h3>
+                </div>
+            </div>
+            <div class="project">
+                <div class="project-left">
+                    <h4>Mail</h4>
+                    <h3>shinto.takahashi@icloud.com</h3>
+                </div>
+            </div>
+            <a href="./login.html" id="logout-button">
+                <!-- <img src="https://img.icons8.com/?size=100&id=42287&format=png&color=000000"> -->
+                <p>Sign out</p>
+            </a>
+        </div>
+    </div>
     <footer>
         <div class="tab-bar">
             <a class="tab-button selected" href="#top">

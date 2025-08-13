@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/ress@4.0.0/dist/ress.min.css">
+    <link rel="stylesheet" href="./login.css">
+    <meta name="theme-color" content="rgb(245, 245, 245)">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <title>eucaly</title>
+    <link rel="manifest" href="manifest.json">
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service_worker.js').then(function (registration) {
+                console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            }).catch(function (err) {
+                console.log('ServiceWorker registration failed: ', err);
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <header id="top">
+        <h1>eucaly</h1>
+        <!-- <p>Hello. Welcome back!</p> -->
+    </header>
+
+    <form action="./index.html" method="get">
+        <!-- <label for="email">Email</label> -->
+        <input type="mail" id="email" name="email" placeholder="Email">
+        <!-- <label for="password">Password</label> -->
+        <input type="password" name="password" placeholder="Password">
+        <p id="forgot-password"><a href="" class="link">Forgot Password?</a></p>
+        <input class="button" type="submit" value="Sign In">
+    </form>
+
+    <p id="sign-up">Don't have any account? <a href="" class="link">Sign Up</a></p>
+</body>
+
+</html>
